@@ -10,9 +10,7 @@
     #if (configUSE_TRACE_FACILITY == 1)
         static char buf[2048];
         vTaskList(buf);
-        ESP_LOGI(TAG, "Task List:
-Name          State  Prio Stack#  Num
-%s", buf);
+        ESP_LOGI(TAG, "Task List:\nName          State  Prio Stack#  Num\n%s", buf);
     #else
         ESP_LOGW(TAG, "configUSE_TRACE_FACILITY disabled");
     #endif
@@ -23,9 +21,7 @@ Name          State  Prio Stack#  Num
     #if (configGENERATE_RUN_TIME_STATS == 1)
         static char buf[2048];
         vTaskGetRunTimeStats(buf);
-        ESP_LOGI(TAG, "Runtime Stats:
-Task            Time     %%
-%s", buf);
+        ESP_LOGI(TAG, "Runtime Stats:\nTask            Time     %%\n%s", buf);
     #else
         ESP_LOGW(TAG, "configGENERATE_RUN_TIME_STATS disabled");
     #endif

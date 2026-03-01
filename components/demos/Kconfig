@@ -1,0 +1,36 @@
+menu "FreeRTOS Demo Selector"
+
+    choice DEMO_SELECT
+        prompt "Select which demo to run"
+        default DEMO_01
+
+        config DEMO_01
+            bool "DEMO 1: Scheduler basics (task states)"
+
+        config DEMO_02
+            bool "DEMO 2: Starvation & timeslice"
+
+        config DEMO_03
+            bool "DEMO 3: vTaskDelayUntil periodic task"
+
+        config DEMO_04
+            bool "DEMO 4: Queue pipeline (sample->upload)"
+
+        config DEMO_05
+            bool "DEMO 5: Task Notification"
+
+        config DEMO_06
+            bool "DEMO 6: EventGroup gate (WIFI/MQTT mock)"
+
+        config DEMO_07
+            bool "DEMO 7: Priority inversion & inheritance (mutex)"
+
+        config DEMO_08
+            bool "DEMO 8: Software timer"
+
+        config DEMO_09
+            bool "DEMO 9: Diagnostics (task list/runtime)"
+
+    endchoice
+
+endmenu

@@ -2,6 +2,10 @@
     #include <stdio.h>
     #include "esp_log.h"
     #include "nvs_flash.h"
+    
+    #include "freertos/FreeRTOS.h"
+    #include "freertos/task.h"
+    
     #include "app_framework.h"
     #include "demo_registry.h"
 

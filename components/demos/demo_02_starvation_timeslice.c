@@ -43,5 +43,6 @@
         xTaskCreate(polite_task, "polite2", 2048, "polite2", 2, NULL);
 
         // 一个更高优先级的 hog，会抢占并长期占用 CPU
-        xTaskCreate(hog_task, "hog", 2048, NULL, 3, NULL);
+        xTaskCreate(hog_task, "hog", 2048, NULL, 2, NULL);
+        // 实验2，hog_task改为2
     }

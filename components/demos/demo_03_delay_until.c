@@ -17,6 +17,8 @@
             vTaskDelay(pdMS_TO_TICKS(100));  // 执行时间会叠加到周期里（抖动/漂移）
         }
     }
+    // 这个任务，执行时间是20+100，总共120ms
+    // 代码的执行时长 + 延时时长
 
     static void periodic_delay_until_task(void *arg)
     {
@@ -32,6 +34,9 @@
             vTaskDelayUntil(&last, period);  // 周期更稳定
         }
     }
+    // 这个任务，执行时间是100ms
+    // 因此，如果想要一个任务按约定的固定周期执行。应该采用这种写法
+    // 延时时长会自动扣除执行时长，动态调节，以保证周期的稳定性。
 
     void demo_03_run(void)
     {

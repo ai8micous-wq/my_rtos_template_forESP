@@ -109,7 +109,7 @@
         lock = xSemaphoreCreateMutex(); // 关键：mutex 才有优先级继承；binary semaphore 没有
         configASSERT(lock);
 
-        xTaskCreate(low_task, "low", 4096, NULL, 1, NULL);
-        xTaskCreate(medium_task, "med", 4096, NULL, 2, NULL);
-        xTaskCreate(high_task, "high", 4096, NULL, 3, NULL);
+        xTaskCreate(low_task, "low", 4096, NULL, 1, &low_handle);
+        xTaskCreate(medium_task, "med", 4096, NULL, 2, &med_handle);
+        xTaskCreate(high_task, "high", 4096, NULL, 3, &high_handle);
     }
